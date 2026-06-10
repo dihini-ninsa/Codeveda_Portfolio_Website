@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics - Codveda Data Analytics Internship</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <nav>
+    <span class="nav-brand">CODVEDA PORTFOLIO</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Analytics</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="datasets.html">Datasets</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button id="theme-toggle" style="background:none; border:none; color:var(--text); font-size:1.4rem; cursor:pointer;">
+      <i class="fas fa-moon"></i>
+    </button>
+  </nav>
+
+  <section class="section">
+    <h1 style="text-align:center; margin-bottom: 3rem;">Internship Analytics</h1>
+
+    <!-- Task 1 -->
+    <h2 style="color: var(--accent2); margin: 2.5rem 0 1.2rem;">Task 1 — Foundations (Iris Dataset)</h2>
+    <div class="task-grid">
+      <div class="task-card">
+        <h3>Data Cleaning & Preprocessing</h3>
+        <img src="images/level1/level1_bar_plot.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Bar Plot">
+      </div>
+      <div class="task-card">
+        <h3>Exploratory Data Analysis</h3>
+        <img src="images/level1/level1_scatter_plot.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Scatter">
+      </div>
+      <div class="task-card">
+        <h3>Basic Data Visualization</h3>
+        <img src="images/level1/level1_line_chart.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Line Chart">
+      </div>
+    </div>
+
+    <!-- Task 2 -->
+    <h2 style="color: var(--accent2); margin: 3rem 0 1.2rem;">Task 2 — Intermediate</h2>
+    <div class="task-grid">
+      <div class="task-card">
+        <h3>Regression Analysis (Boston Housing)</h3>
+        <img src="images/level2/level2_regression_result.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Regression">
+      </div>
+      <div class="task-card">
+        <h3>K-Means Clustering</h3>
+        <img src="images/level2/level2_clusters.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Clusters">
+        <img src="images/level2/level2_elbow_method.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Elbow Method">
+      </div>
+    </div>
+
+    <!-- Task 3 -->
+    <h2 style="color: var(--accent2); margin: 3rem 0 1.2rem;">Task 3 — Advanced</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(520px, 1fr)); gap: 1.8rem;">
+
+      <div class="task-card">
+        <h3>Customer Churn Prediction</h3>
+        <img src="images/level3/level3_task1_correlation_heatmap.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Heatmap">
+        <img src="images/level3/level3_task1_churn_distribution.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Churn Distribution">
+        <img src="images/level3/level3_task1_churn_by_category.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Churn by Category">
+      </div>
+
+      <div class="task-card">
+        <h3>NLP Sentiment Analysis</h3>
+        <img src="images/level3/level3_task3_wordclouds.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Wordclouds">
+        <img src="images/level3/level3_task3_sentiment_distribution.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Sentiment Distribution">
+        <img src="images/level3/level3_task3_polarity_subjectivity.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Polarity">
+        <img src="images/level3/level3_task3_top_words_per_sentiment.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Top Words">
+        <img src="images/level3/level3_task3_sentiment_trends.png" style="width:100%; border-radius:12px; margin:0.8rem 0;" alt="Sentiment Trends">
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Dihini Nihinsa</strong> • Data Analytics Intern @ Codveda Technologies</p>
+    <div class="social-links">
+      <a href="https://linkedin.com/in/dihini-nihinsa-7a794a312" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/dihini-ninsa" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:dgalappaththi.20@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p style="margin-top:1.5rem; opacity:0.8;">All Tasks Completed Successfully • June 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
