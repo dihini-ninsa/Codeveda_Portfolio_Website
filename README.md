@@ -8,7 +8,7 @@ An interactive portfolio website showcasing data analytics work completed during
 
 ## Live Demo
 
-Deploy the site using  https://dihini.ninsa.github.io/Codveda_DataAnalysis_Project/
+Deploy the site using  https://dihini-ninsa.github.io/Codeveda_Portfolio_Website/
 
 ## Features
 
