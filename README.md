@@ -8,15 +8,7 @@ An interactive portfolio website showcasing data analytics work completed during
 
 ## Live Demo
 
-Deploy the site using [GitHub Pages](#deploy-with-github-pages) or [Netlify](#deploy-with-netlify), then share your live URL on LinkedIn or your resume.
-
-Example URL format (GitHub Pages):
-
-```text
-https://YOUR_USERNAME.github.io/Codveda_DataAnalysis_Project/
-```
-
----
+Deploy the site using https://github.com/dihini-ninsa/Codeveda_Portfolio_Website
 
 ## Features
 
