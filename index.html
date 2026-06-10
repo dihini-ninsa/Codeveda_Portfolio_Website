@@ -3,77 +3,486 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Codveda Data Analytics Internship Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Dihini Nihinsa — Data Analytics Projects</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ 
+  <!-- NAV -->
   <nav>
-    <span class="nav-brand">CODVEDA PORTFOLIO</span>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="projects.html">Analytics</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="datasets.html">Datasets</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button id="theme-toggle" style="background:none; border:none; color:var(--text); font-size:1.4rem; cursor:pointer;">
-      <i class="fas fa-moon"></i>
-    </button>
+    <a class="nav-logo" onclick="showPage('home')">Codveda_DataAnalysis_Project</a>
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <ul class="nav-links">
+        <li><a href="#" onclick="showPage('home');return false;" id="nav-home" class="active">Home</a></li>
+        <li><a href="#" onclick="showPage('projects');return false;" id="nav-projects">Projects</a></li>
+        <li><a href="#" onclick="showPage('explorer');return false;" id="nav-explorer">Explore Data</a></li>
+        <li><a href="#" onclick="showPage('about');return false;" id="nav-about">About</a></li>
+      </ul>
+      <button id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMobileMenu()" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
-
-  <section class="hero">
-    <h1>Data Analytics<br><span>Internship Portfolio</span></h1>
-    
-    <p style="max-width: 680px; margin: 1.8rem auto; font-size: 1.15rem; color: var(--muted); line-height: 1.8;">
-      This portfolio showcases my complete 3 Tasks(3 levels for each task) Data Analytics Internship at 
-      <strong>Codveda Technologies</strong>. From foundational data cleaning and visualization 
-      to advanced Machine Learning, Clustering, NLP Sentiment Analysis, and building 
-      interactive Power BI dashboards.
-    </p>
-
-    <div style="margin: 2.5rem 0;">
-      <a href="projects.html" class="btn" style="margin-right: 1rem;">View Analytics</a>
-      <a href="datasets.html" class="btn" style="background:transparent; border:2px solid var(--accent);">Explore Datasets</a>
-    </div>
-
-    <div style="margin-top: 4rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; font-size: 0.95rem; color: var(--muted);">
-      <div><strong>3</strong> Levels Completed</div>
-      <div><strong>7+</strong> Tasks Delivered</div>
-      <div><strong>5</strong> Real Datasets Analysed</div>
-      <div><strong>10+</strong> Tools & Libraries</div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 style="text-align:center; margin-bottom:3rem;">Quick Overview</h2>
-    <div class="task-grid">
-      <div class="task-card">
-        <h3>Task 1 — Foundations</h3>
-        <p>Iris Dataset: Data Cleaning, EDA & Visualization</p>
+ 
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" onclick="showPage('home');closeMobile();return false;">Home</a>
+    <a href="#" onclick="showPage('projects');closeMobile();return false;">Projects</a>
+    <a href="#" onclick="showPage('explorer');closeMobile();return false;">Explore Data</a>
+    <a href="#" onclick="showPage('about');closeMobile();return false;">About</a>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════════
+       HOME PAGE
+  ════════════════════════════════════════════ -->
+  <div class="page-section active" id="home">
+    <section class="hero-section">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-glow2"></div>
+      <div class="tag">Codveda Technologies · Data Analytics Internship</div>
+      <h1>Turning raw data into<br><em>real insight</em></h1>
+      <p class="hero-desc">Three Tasks of data analytics from cleaning messy datasets to building ML classifiers, clustering algorithms, stock dashboards, and NLP sentiment engines. All work, real findings.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="showPage('explorer')">Explore the charts ↓</button>
+        <button class="btn btn-outline" onclick="showPage('projects')">View all projects</button>
       </div>
-      <div class="task-card">
-        <h3>Task 2 — Intermediate</h3>
-        <p>Boston Housing Regression & Iris K-Means Clustering</p>
+      <div class="hero-stats">
+        <div class="stat-item"><div class="stat-num">3<span>×</span></div><div class="stat-label">Levels completed</div></div>
+        <div class="stat-item"><div class="stat-num">7<span>+</span></div><div class="stat-label">Tasks delivered</div></div>
+        <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Datasets analysed</div></div>
+        <div class="stat-item"><div class="stat-num">10<span>+</span></div><div class="stat-label">Tools used</div></div>
       </div>
-      <div class="task-card">
-        <h3>Task 3 — Advanced</h3>
-        <p>Customer Churn Prediction, Stock Dashboard & NLP Sentiment Analysis</p>
+    </section>
+ 
+    <!-- QUICK PREVIEW CARDS ON HOME -->
+    <section class="section alt">
+      <div class="eyebrow">Highlights</div>
+      <h2 class="section-title">Featured projects</h2>
+      <p class="section-sub">A snapshot of the most interesting work. Click any card to explore the live chart.</p>
+      <div class="projects-grid">
+        <div class="project-card" onclick="goExplore('iris')">
+          <div class="card-top-bar" style="background:var(--blue2);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(59,130,246,0.12);color:var(--blue2);">Task 1 · EDA</span>
+            <div class="card-title">Iris Dataset — Correlation & Distribution</div>
+            <div class="card-desc">Petal length vs petal width reached a 0.96 correlation. Setosa is perfectly separable from both other species by petal measurements alone.</div>
+            <div class="card-tools"><span class="tool-chip">pandas</span><span class="tool-chip">seaborn</span><span class="tool-chip">matplotlib</span></div>
+          </div>
+          <div class="card-link">Open chart explorer →</div>
+        </div>
+        <div class="project-card" onclick="goExplore('kmeans')">
+          <div class="card-top-bar" style="background:var(--amber);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(251,191,36,0.12);color:var(--amber);">Task 2 · ML</span>
+            <div class="card-title">K-Means Clustering — Iris</div>
+            <div class="card-desc">Standardised 4 features with StandardScaler, used the elbow method to confirm k=3 as optimal, then applied K-Means. Clusters closely matched the 3 actual Iris species.</div>
+            <div class="card-tools"><span class="tool-chip">KMeans</span><span class="tool-chip">StandardScaler</span><span class="tool-chip">elbow method</span></div>
+          </div>
+          <div class="card-link">Open chart explorer →</div>
+        </div>
+        <div class="project-card" onclick="goExplore('churn')">
+          <div class="card-top-bar" style="background:var(--purple);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(167,139,250,0.12);color:var(--purple);">Task 3 · ML</span>
+            <div class="card-title">Customer Churn Classification</div>
+            <div class="card-desc">Random Forest outperformed Decision Tree and Logistic Regression. International plan users churn at 42% — 3× the baseline rate.</div>
+            <div class="card-tools"><span class="tool-chip">RandomForest</span><span class="tool-chip">GridSearchCV</span><span class="tool-chip">scikit-learn</span></div>
+          </div>
+          <div class="card-link">Open chart explorer →</div>
+        </div>
+        <div class="project-card" onclick="goExplore('nlp')">
+          <div class="card-top-bar" style="background:var(--teal);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(20,184,166,0.12);color:var(--teal);">Task 3 · NLP</span>
+            <div class="card-title">Sentiment Analysis — Social Media</div>
+            <div class="card-desc">Full NLP pipeline with NLTK preprocessing, TextBlob polarity scoring, word clouds, and sentiment trend analysis over time.</div>
+            <div class="card-tools"><span class="tool-chip">nltk</span><span class="tool-chip">TextBlob</span><span class="tool-chip">WordCloud</span></div>
+          </div>
+          <div class="card-link">Open chart explorer →</div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>© 2026 Dihini Nihinsa — Codveda Technologies Data Analytics Internship</p>
+      <div class="footer-links">
+        <a href="https://github.com/dihini-ninsa" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/dihini-nihinsa-7a794a312" target="_blank">LinkedIn</a>
+        <a href="mailto:dgalappaththi.20@gmail.com">Email</a>
+      </div>
+    </footer>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════════
+       PROJECTS PAGE
+  ════════════════════════════════════════════ -->
+  <div class="page-section" id="projects">
+    <section class="section">
+      <div class="eyebrow">Work</div>
+      <h2 class="section-title">All Projects</h2>
+      <p class="section-sub">Seven tasks across three progressive levels. Filter by level or click any card to open its live chart.</p>
+ 
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterCards('all',this)">All</button>
+        <button class="filter-btn" onclick="filterCards('l1',this)">Task 1 — Foundations</button>
+        <button class="filter-btn" onclick="filterCards('l2',this)">Task 2 — Intermediate</button>
+        <button class="filter-btn" onclick="filterCards('l3',this)">Task 3 — Advanced</button>
+      </div>
+ 
+      <div class="projects-grid" id="all-cards">
+ 
+        <div class="project-card" data-level="l1" onclick="goExplore('iris')">
+          <div class="card-top-bar" style="background:var(--blue2);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(59,130,246,0.12);color:var(--blue2);">Level 1</span>
+            <div class="card-title">Data Cleaning & Preprocessing</div>
+            <div class="card-desc">Handled 3 duplicate rows, imputed missing values with column means, standardised the species column format, and confirmed data types. Exported a clean CSV for downstream analysis.</div>
+            <div class="card-tools"><span class="tool-chip">pandas</span><span class="tool-chip">dropna</span><span class="tool-chip">fillna</span><span class="tool-chip">str.strip</span></div>
+          </div>
+          <div class="card-link">View chart →</div>
+        </div>
+ 
+        <div class="project-card" data-level="l1" onclick="goExplore('iris')">
+          <div class="card-top-bar" style="background:var(--teal);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(20,184,166,0.12);color:var(--teal);">Level 2</span>
+            <div class="card-title">Exploratory Data Analysis — Iris</div>
+            <div class="card-desc">Computed summary statistics, visualised distributions with histograms and boxplots, built pairplots by species, and created a correlation heatmap revealing a 0.96 petal correlation.</div>
+            <div class="card-tools"><span class="tool-chip">pandas</span><span class="tool-chip">seaborn</span><span class="tool-chip">matplotlib</span><span class="tool-chip">pairplot</span></div>
+          </div>
+          <div class="card-link">View chart →</div>
+        </div>
+ 
+        <div class="project-card" data-level="l1" onclick="goExplore('iris')">
+          <div class="card-top-bar" style="background:var(--purple);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(167,139,250,0.12);color:var(--purple);">Level 3</span>
+            <div class="card-title">Basic Data Visualisation</div>
+            <div class="card-desc">Created bar plots (species count), line charts (feature values for first 30 rows), and scatter plots (sepal vs petal length by species). All charts exported as PNG images.</div>
+            <div class="card-tools"><span class="tool-chip">matplotlib</span><span class="tool-chip">seaborn</span><span class="tool-chip">PNG export</span></div>
+          </div>
+          <div class="card-link">View chart →</div>
+        </div>
+ 
+        <div class="project-card" data-level="l2" onclick="goExplore('regression')">
+          <div class="card-top-bar" style="background:var(--coral);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(248,113,113,0.12);color:var(--coral);">Level 1</span>
+            <div class="card-title">Linear Regression — House Prices</div>
+            <div class="card-desc">Predicted Boston house prices from 13 features. Performed 80/20 train-test split, fitted LinearRegression, and evaluated with R² and MSE. LSTAT and RM were dominant predictors.</div>
+            <div class="card-tools"><span class="tool-chip">scikit-learn</span><span class="tool-chip">LinearRegression</span><span class="tool-chip">R²</span><span class="tool-chip">MSE</span></div>
+          </div>
+          <div class="card-link">View chart →</div>
+        </div>
+ 
+        <div class="project-card" data-level="l2" onclick="goExplore('kmeans')">
+          <div class="card-top-bar" style="background:var(--amber);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(251,191,36,0.12);color:var(--amber);">Level 2</span>
+            <div class="card-title">K-Means Clustering — Iris</div>
+            <div class="card-desc">Standardised 4 features with StandardScaler, used the elbow method to confirm k=3 as optimal, then applied K-Means. Clusters closely matched the 3 actual Iris species.</div>
+            <div class="card-tools"><span class="tool-chip">KMeans</span><span class="tool-chip">StandardScaler</span><span class="tool-chip">elbow method</span></div>
+          </div>
+          <div class="card-link">View chart →</div>
+        </div>
+ 
+        <div class="project-card" data-level="l3" onclick="goExplore('churn')">
+          <div class="card-top-bar" style="background:var(--purple);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(167,139,250,0.12);color:var(--purple);">Level 1</span>
+            <div class="card-title">Classification — Customer Churn</div>
+            <div class="card-desc">Trained and compared Decision Tree, Logistic Regression, and Random Forest on telecom churn data. Applied Grid Search CV for hyperparameter tuning. Random Forest won on all metrics.</div>
+            <div class="card-tools"><span class="tool-chip">RandomForest</span><span class="tool-chip">GridSearchCV</span><span class="tool-chip">confusion matrix</span><span class="tool-chip">F1</span></div>
+          </div>
+          <div class="card-link">View chart →</div>
+        </div>
+ 
+        <div class="project-card" data-level="l3" onclick="goExplore('stock')">
+          <div class="card-top-bar" style="background:var(--teal);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(20,184,166,0.12);color:var(--teal);">Level 2</span>
+            <div class="card-title">Interactive Dashboard — Stock Prices</div>
+            <div class="card-desc">Feature-engineered daily returns and 30-day moving averages from 2017 OHLCV stock data. Identified top 10 stocks by volume and exported cleaned CSV for Power BI.</div>
+            <div class="card-tools"><span class="tool-chip">pandas</span><span class="tool-chip">Power BI</span><span class="tool-chip">pct_change</span><span class="tool-chip">rolling MA</span></div>
+          </div>
+          <div class="card-link">View chart →</div>
+        </div>
+ 
+        <div class="project-card" data-level="l3" onclick="goExplore('nlp')">
+          <div class="card-top-bar" style="background:var(--blue);"></div>
+          <div class="card-body">
+            <span class="card-level" style="background:rgba(59,130,246,0.12);color:var(--blue2);">Level 3</span>
+            <div class="card-title">NLP Sentiment Analysis</div>
+            <div class="card-desc">Full pipeline: lowercase → remove URLs/mentions → tokenise → remove stopwords → lemmatise. TextBlob polarity scoring with word clouds and frequency charts per sentiment class.</div>
+            <div class="card-tools"><span class="tool-chip">nltk</span><span class="tool-chip">TextBlob</span><span class="tool-chip">WordCloud</span><span class="tool-chip">lemmatisation</span></div>
+          </div>
+          <div class="card-link">View chart →</div>
+        </div>
+ 
+      </div>
+    </section>
+    <footer>
+      <p>© 2026 Dihini Nihinsa — Codveda Technologies Data Analytics Internship</p>
+      <div class="footer-links">
+        <a href="https://github.com/dihini-ninsa" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/dihini-nihinsa-7a794a312" target="_blank">LinkedIn</a>
+        <a href="mailto:dgalappaththi.20@gmail.com">Email</a>
+      </div>
+    </footer>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════════
+       EXPLORE DATA PAGE
+  ════════════════════════════════════════════ -->
+  <div class="page-section" id="explorer">
+    <section class="section">
+      <div class="eyebrow">Interactive</div>
+      <h2 class="section-title">Explore the data</h2>
+      <p class="section-sub">Live charts from every project. Switch between datasets, toggle views, and read the key findings below each chart.</p>
+ 
+      <div class="explorer">
+        <div class="explorer-tabs">
+          <button class="explorer-tab active" id="etab-iris" onclick="switchExplorer('iris',this)"> Iris EDA</button>
+          <button class="explorer-tab" id="etab-regression" onclick="switchExplorer('regression',this)"> Regression</button>
+          <button class="explorer-tab" id="etab-kmeans" onclick="switchExplorer('kmeans',this)"> K-Means</button>
+          <button class="explorer-tab" id="etab-churn" onclick="switchExplorer('churn',this)"> Churn</button>
+          <button class="explorer-tab" id="etab-stock" onclick="switchExplorer('stock',this)"> Stock</button>
+          <button class="explorer-tab" id="etab-nlp" onclick="switchExplorer('nlp',this)"> Sentiment</button>
+        </div>
+        <div class="explorer-body">
+ 
+          <!-- IRIS -->
+          <div class="explorer-panel active" id="epanel-iris">
+            <div class="chart-controls">
+              <span class="ctrl-label">Chart:</span>
+              <button class="ctrl-btn active" onclick="irisView('corr',this)">Correlations</button>
+              <button class="ctrl-btn" onclick="irisView('dist',this)">Distributions</button>
+              <button class="ctrl-btn" onclick="irisView('species',this)">By Species</button>
+            </div>
+            <div class="chart-wrap"><canvas id="chart-iris"></canvas></div>
+            <div class="chart-insight"><p id="iris-insight"></p></div>
+            <div class="findings-row">
+              <div class="finding-card"><div class="finding-num" style="color:var(--blue2);">0.96</div><div class="finding-label">Petal length ↔ petal width correlation</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--teal);">3</div><div class="finding-label">Duplicate rows removed</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--purple);">50</div><div class="finding-label">Samples per species</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--amber);">100%</div><div class="finding-label">Setosa separability</div></div>
+            </div>
+          </div>
+ 
+          <!-- REGRESSION -->
+          <div class="explorer-panel" id="epanel-regression">
+            <div class="chart-controls">
+              <span class="ctrl-label">Chart:</span>
+              <button class="ctrl-btn active" onclick="regView('pred',this)">Actual vs Predicted</button>
+              <button class="ctrl-btn" onclick="regView('coeff',this)">Feature Coefficients</button>
+            </div>
+            <div class="chart-wrap"><canvas id="chart-reg"></canvas></div>
+            <div class="chart-insight"><p id="reg-insight"></p></div>
+            <div class="findings-row">
+              <div class="finding-card"><div class="finding-num" style="color:var(--coral);">0.669</div><div class="finding-label">R² Fit on Test Set</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--blue2);">13</div><div class="finding-label">Input features</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--green);">80/20</div><div class="finding-label">Train / test split</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--amber);">RM</div><div class="finding-label">Top positive predictor</div></div>
+            </div>
+          </div>
+ 
+          <!-- KMEANS -->
+          <div class="explorer-panel" id="epanel-kmeans">
+            <div class="chart-controls">
+              <span class="ctrl-label">Chart:</span>
+              <button class="ctrl-btn active" onclick="kView('elbow',this)">Elbow Method</button>
+              <button class="ctrl-btn" onclick="kView('cluster',this)">Cluster Sizes</button>
+              <button class="ctrl-btn" onclick="kView('scatter',this)">Cluster Scatter</button>
+            </div>
+            <div class="chart-wrap"><canvas id="chart-kmeans"></canvas></div>
+            <div class="chart-insight"><p id="kmeans-insight"></p></div>
+            <div class="findings-row">
+              <div class="finding-card"><div class="finding-num" style="color:var(--amber);">k=3</div><div class="finding-label">Optimal clusters</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--blue2);">~97%</div><div class="finding-label">Cluster-species alignment</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--teal);">4</div><div class="finding-label">Features standardised</div></div>
+            </div>
+          </div>
+ 
+          <!-- CHURN -->
+          <div class="explorer-panel" id="epanel-churn">
+            <div class="chart-controls">
+              <span class="ctrl-label">Chart:</span>
+              <button class="ctrl-btn active" onclick="churnView('model',this)">Model Comparison</button>
+              <button class="ctrl-btn" onclick="churnView('rate',this)">Churn by Feature</button>
+              <button class="ctrl-btn" onclick="churnView('matrix',this)">Confusion Matrix</button>
+            </div>
+            <div class="chart-wrap"><canvas id="chart-churn"></canvas></div>
+            <div class="chart-insight"><p id="churn-insight"></p></div>
+            <div class="findings-row">
+              <div class="finding-card"><div class="finding-num" style="color:var(--purple);">3</div><div class="finding-label">Classifiers compared</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--coral);">42.4%</div><div class="finding-label">Churn rate (intl plan)</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--green);">RF</div><div class="finding-label">Best overall model</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--blue2);">96%</div><div class="finding-label">RF accuracy (tuned)</div></div>
+            </div>
+          </div>
+ 
+          <!-- STOCK -->
+          <div class="explorer-panel" id="epanel-stock">
+            <div class="chart-controls">
+              <span class="ctrl-label">Chart:</span>
+              <button class="ctrl-btn active" onclick="stockView('price',this)">Price + MA</button>
+              <button class="ctrl-btn" onclick="stockView('volume',this)">Top by Volume</button>
+              <button class="ctrl-btn" onclick="stockView('return',this)">Daily Returns</button>
+            </div>
+            <div class="chart-wrap"><canvas id="chart-stock"></canvas></div>
+            <div class="chart-insight"><p id="stock-insight"></p></div>
+            <div class="findings-row">
+              <div class="finding-card"><div class="finding-num" style="color:var(--teal);">30d</div><div class="finding-label">Moving average window</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--blue2);">Top 10</div><div class="finding-label">Stocks by volume</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--amber);">%Δ</div><div class="finding-label">Daily return feature</div></div>
+            </div>
+          </div>
+ 
+          <!-- NLP -->
+          <div class="explorer-panel" id="epanel-nlp">
+            <div class="chart-controls">
+              <span class="ctrl-label">Chart:</span>
+              <button class="ctrl-btn active" onclick="nlpView('dist',this)">Sentiment Distribution</button>
+              <button class="ctrl-btn" onclick="nlpView('polarity',this)">Polarity Scores</button>
+              <button class="ctrl-btn" onclick="nlpView('compare',this)">Labels vs TextBlob</button>
+            </div>
+            <div class="chart-wrap"><canvas id="chart-nlp"></canvas></div>
+            <div class="chart-insight"><p id="nlp-insight"></p></div>
+            <div class="findings-row">
+              <div class="finding-card"><div class="finding-num" style="color:var(--green);">+0.05</div><div class="finding-label">Positive threshold</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--coral);">−0.05</div><div class="finding-label">Negative threshold</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--purple);">7</div><div class="finding-label">Preprocessing steps</div></div>
+              <div class="finding-card"><div class="finding-num" style="color:var(--amber);">191</div><div class="finding-label">Unique labels processed</div></div>
+            </div>
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>© 2026 Dihini Nihinsa — Codveda Technologies Data Analytics Internship</p>
+      <div class="footer-links">
+        <a href="https://github.com/dihini-ninsa" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/dihini-nihinsa-7a794a312" target="_blank">LinkedIn</a>
+        <a href="mailto:dgalappaththi.20@gmail.com">Email</a>
+      </div>
+    </footer>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════════
+       ABOUT PAGE
+  ════════════════════════════════════════════ -->
+  <div class="page-section" id="about">
+    <div class="about-hero">
+      <div class="eyebrow">About</div>
+      <div class="about-name">Dihini Nihinsa</div>
+      <div class="about-role">Data Analytics Intern · Codveda Technologies</div>
+      <p class="about-bio">
+        Passionate about turning raw, messy data into clear, actionable insights. Completed a full three-task data analytics internship covering the complete pipeline from data cleaning and EDA through to machine learning regression, classification, clustering, NLP, and interactive investor dashboards.
+      </p>
+      <div class="contact-row">
+        <a href="mailto:dgalappaththi.20@gmail.com" class="contact-btn primary"> Email me</a>
+        <a href="https://github.com/dihini-ninsa" target="_blank" class="contact-btn"> GitHub</a>
+        <a href="https://linkedin.com/in/dihini-nihinsa-7a794a312" target="_blank" class="contact-btn"> LinkedIn</a>
       </div>
     </div>
-  </section>
-
-  <footer>
-    <p><strong>Dihini Nihinsa</strong> • Data Analytics Intern @ Codveda Technologies</p>
-    <div class="social-links">
-      <a href="https://linkedin.com/in/dihini-nihinsa-7a794a312" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/dihini-ninsa" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:dgalappaththi.20@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-    <p style="margin-top:1.5rem; opacity:0.8;">All Tasks Completed Successfully • June 2026</p>
-  </footer>
-
+ 
+    <section class="section">
+      <div class="about-grid">
+ 
+        <div class="about-card">
+          <h3>Technical skills</h3>
+          <div class="skill-row"><span class="skill-name-ab">Python</span><div class="skill-bar-wrap"><div class="skill-bar-fill" data-w="92"></div></div></div>
+          <div class="skill-row"><span class="skill-name-ab">Pandas / NumPy</span><div class="skill-bar-wrap"><div class="skill-bar-fill" data-w="88"></div></div></div>
+          <div class="skill-row"><span class="skill-name-ab">Matplotlib / Seaborn</span><div class="skill-bar-wrap"><div class="skill-bar-fill" data-w="85"></div></div></div>
+          <div class="skill-row"><span class="skill-name-ab">Scikit-learn</span><div class="skill-bar-wrap"><div class="skill-bar-fill" data-w="80"></div></div></div>
+          <div class="skill-row"><span class="skill-name-ab">NLP (NLTK / TextBlob)</span><div class="skill-bar-wrap"><div class="skill-bar-fill" data-w="75"></div></div></div>
+          <div class="skill-row"><span class="skill-name-ab">Power BI</span><div class="skill-bar-wrap"><div class="skill-bar-fill" data-w="70"></div></div></div>
+          <div class="skill-row"><span class="skill-name-ab">SQL</span><div class="skill-bar-wrap"><div class="skill-bar-fill" data-w="68"></div></div></div>
+        </div>
+ 
+        <div class="about-card">
+          <h3>Internship timeline</h3>
+          <ul class="timeline">
+            <li>
+              <div>
+                <div class="tl-date">Task 1</div>
+                <div class="tl-text"><strong>Foundations</strong>Data cleaning, EDA, and basic visualisation on the Iris dataset using pandas, matplotlib, and seaborn.</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="tl-date">Task 2</div>
+                <div class="tl-text"><strong>Intermediate ML</strong>Linear regression on Boston Housing and K-Means clustering on Iris. Introduced scikit-learn and feature scaling.</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="tl-date">Task 3 · Level 1</div>
+                <div class="tl-text"><strong>Advanced Classification</strong>Multi-model comparison with Grid Search on Telecom Churn dataset. Random Forest + hyperparameter tuning.</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="tl-date">Task 3 · Level 2</div>
+                <div class="tl-text"><strong>Interactive Dashboard</strong>Feature engineering on 2017 Stock Prices data and Power BI dashboard design for investor analysis.</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="tl-date">Task 3 · Level 3</div>
+                <div class="tl-text"><strong>NLP & Sentiment</strong>End-to-end NLP pipeline with NLTK, TextBlob scoring, word clouds, and temporal sentiment trend analysis.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+ 
+        <div class="about-card">
+          <h3>Datasets worked with</h3>
+          <ul class="timeline">
+            <li><div><div class="tl-date">Biology</div><div class="tl-text"><strong>Iris Dataset</strong>150 samples (147 clean), 4 features, 3 species. Used across Tasks 1 & 2.</div></div></li>
+            <li><div><div class="tl-date">Real estate</div><div class="tl-text"><strong>Boston Housing</strong>506 samples, 13 features, continuous price target.</div></div></li>
+            <li><div><div class="tl-date">Telecom</div><div class="tl-text"><strong>Customer Churn</strong>Binary churn label, 3333 customer entries, split 80/20.</div></div></li>
+            <li><div><div class="tl-date">Finance</div><div class="tl-text"><strong>Stock Prices 2017</strong>Multi-symbol OHLCV daily data for dashboard design.</div></div></li>
+            <li><div><div class="tl-date">Social media</div><div class="tl-text"><strong>Sentiment Dataset</strong>732 posts with original labels, processed with TextBlob.</div></div></li>
+          </ul>
+        </div>
+ 
+        <div class="about-card">
+          <h3>Key findings at a glance</h3>
+          <ul class="timeline">
+            <li><div><div class="tl-date">EDA</div><div class="tl-text">Petal length ↔ petal width correlation: <strong style="color:var(--blue2);">0.96</strong></div></div></li>
+            <li><div><div class="tl-date">Clustering</div><div class="tl-text">Elbow method confirmed <strong style="color:var(--amber);">k=3</strong> — matching real species count exactly</div></div></li>
+            <li><div><div class="tl-date">ML</div><div class="tl-text">International plan users churn at <strong style="color:var(--coral);">42.4%</strong> vs 11.5% baseline</div></div></li>
+            <li><div><div class="tl-date">ML</div><div class="tl-text">Random Forest achieved <strong style="color:var(--green);">96%</strong> accuracy after Grid Search tuning</div></div></li>
+            <li><div><div class="tl-date">NLP</div><div class="tl-text">TextBlob tends to over-predict <strong style="color:var(--purple);">Neutral</strong> vs the original labels</div></div></li>
+          </ul>
+        </div>
+ 
+      </div>
+    </section>
+    <footer>
+      <p>© 2026 Dihini Nihinsa — Codveda Technologies Data Analytics Internship</p>
+      <div class="footer-links">
+        <a href="https://github.com/dihini-ninsa" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/dihini-nihinsa-7a794a312" target="_blank">LinkedIn</a>
+        <a href="mailto:dgalappaththi.20@gmail.com">Email</a>
+      </div>
+    </footer>
+  </div>
+ 
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+ 
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+ 
   <script src="script.js"></script>
 </body>
 </html>
