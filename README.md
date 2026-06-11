@@ -6,7 +6,7 @@
 
 Codveda Data Analysis Project is an interactive portfolio website built to showcase data analytics work from the Codveda Technologies Data Analytics Internship. It covers three progressive tasks — from Iris dataset EDA and data cleaning, through K-Means clustering and regression, to advanced customer churn classification, stock dashboard analysis, and NLP sentiment processing. The site includes live Chart.js visualisations, project filtering, dark/light mode, and Jupyter notebooks for the underlying analysis.
 
-**Live demo:** https://github.com/dihini-ninsa/Codeveda_Portfolio_Website
+**Live demo:** https://github.com/dihini-ninsa.github.io/Codeveda_Portfolio_Website
 
 **Topics:** `data-analytics` · `portfolio-website` · `codveda` · `python` · `machine-learning` · `data-visualization` · `chartjs` · `jupyter-notebook` · `eda` · `nlp`
 
